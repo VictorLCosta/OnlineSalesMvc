@@ -17,7 +17,8 @@ namespace OnlineSalesMvc.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Online Sales MVC application from C# course";
+            ViewData["Author"] = "Victor Lima Costa";
 
             return View();
         }
