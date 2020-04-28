@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using OnlineSalesMvc.Data;
+using OnlineSalesMvc.Models;
+using OnlineSalesMvc.Services;
 
 namespace OnlineSalesMvc
 {
@@ -39,6 +40,8 @@ namespace OnlineSalesMvc
             services.AddDbContext<OnlineSalesMvcContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("OnlineSalesMvcContext"), 
                         builder => builder.MigrationsAssembly("OnlineSalesMvc")));
+
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
